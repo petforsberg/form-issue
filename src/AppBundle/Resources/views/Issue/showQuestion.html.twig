@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section id="question-form">
+        <h3>{{ questionText }}</h3>
+        {{ form_start(form) }}
+        {% for choice in form.children.answers %}
+            <div>
+                {{ form_widget(choice) }}
+                {{ form_label(choice) }}
+            </div>
+        {% endfor %}
+        <br/>
+        {{ form_end(form) }}
+    </section>
+{% endblock %}
